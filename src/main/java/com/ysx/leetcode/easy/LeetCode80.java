@@ -31,8 +31,8 @@ public class LeetCode80 {
         }
         int cur = 1;
         for (int i = 2; i < nums.length; i++) {
-            // 判断与当前数不相等，或者相等的不超过2个数
-            if (nums[cur] != nums[i] || nums[cur - 1] != nums[cur]) {
+            // 判断与当前数不相等，或者相等的不超过2个数，可简化为 nums[cur-1] != nums[i]
+            if (nums[cur - 1] != nums[i]) {
                 cur++;
                 nums[cur] = nums[i];
             }
