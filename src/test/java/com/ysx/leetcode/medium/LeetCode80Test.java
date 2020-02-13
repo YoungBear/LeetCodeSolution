@@ -1,5 +1,6 @@
-package com.ysx.leetcode.easy;
+package com.ysx.leetcode.medium;
 
+import com.ysx.leetcode.medium.LeetCode80;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
