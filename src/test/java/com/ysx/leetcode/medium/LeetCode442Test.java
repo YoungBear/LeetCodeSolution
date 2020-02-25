@@ -1,4 +1,4 @@
-package com.ysx.leetcode.easy;
+package com.ysx.leetcode.medium;
 
 import org.junit.Assert;
 import org.junit.Test;
