@@ -7,6 +7,7 @@ package com.ysx.leetcode.easy;
  * @blog https://blog.csdn.net/next_second
  * @github https://github.com/YoungBear
  * @description 345. 反转字符串中的元音字母
+ * https://leetcode-cn.com/problems/reverse-vowels-of-a-string/
  */
 public class LeetCode345 {
     public String reverseVowels(String s) {
