@@ -54,4 +54,11 @@ public class LeetCode914Test {
         Assert.assertTrue(leetCode914.hasGroupsSizeX(deck));
     }
 
+    @Test
+    public void test7() {
+        LeetCode914 leetCode914 = new LeetCode914();
+        int[] deck = {0, 0, 0, 1, 1, 1, 2, 2, 2};
+        Assert.assertTrue(leetCode914.hasGroupsSizeX(deck));
+    }
+
 }

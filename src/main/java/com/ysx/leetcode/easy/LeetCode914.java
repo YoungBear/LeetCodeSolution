@@ -1,10 +1,5 @@
 package com.ysx.leetcode.easy;
 
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
 /**
  * @author youngbear
  * @email youngbear@aliyun.com
@@ -19,23 +14,24 @@ public class LeetCode914 {
         if (deck.length <= 1) {
             return false;
         }
-        // 按值分组
-        Map<Integer, Long> map =
-                IntStream.of(deck).boxed()
-                        .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        // 找到成员最小的组的成员个数 min
-        int min = map.values().stream().min(Long::compareTo).get().intValue();
-        if (min < 2) {
-            return false;
+        int[] counters = new int[10000];
+        for (int d : deck) {
+            counters[d]++;
         }
-        for (Long n : map.values()) {
-            // 求最大公约数
-            min = gcd(min, n.intValue());
-            if (min == 1) {
+        int maxDivisor = 0;
+        for (int c : counters) {
+            if (c == 0) {
+                continue;
+            }
+            if (c == 1) {
+                return false;
+            }
+            maxDivisor = gcd(maxDivisor, c);
+            if (maxDivisor == 1) {
                 return false;
             }
         }
-        return min >= 2;
+        return maxDivisor >= 2;
     }
 
     /**
