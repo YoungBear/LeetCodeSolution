@@ -1,3 +1,7 @@
+-- LeetCode 1350. 院系无效的学生
+SELECT S.id, S.name FROM Students S LEFT JOIN Departments D ON S.department_id = D.id WHERE D.id IS NULL
+SELECT id, name FROM Students WHERE department_id NOT IN (SELECT id FROM Departments)
+
 
 -- LeetCode 175. 组合两个表
 SELECT P.FirstName, P.LastName, A.City, A.State FROM Person P LEFT JOIN Address A ON P.PersonId = A.PersonId
