@@ -25,5 +25,6 @@ SELECT a.Id FROM Weather a, Weather b WHERE DATEDIFF(a.RecordDate, b.RecordDate)
 -- LeetCode 183. 从不订购的客户
 SELECT Name AS Customers FROM Customers WHERE Id NOT IN (SELECT CustomerId FROM Orders);
 
-
+-- LeetCode 607. 销售员
+SELECT name FROM salesperson WHERE sales_id NOT IN (SELECT sales_id FROM orders INNER JOIN company ON orders.com_id = company.com_id WHERE company.name = 'RED');
 
