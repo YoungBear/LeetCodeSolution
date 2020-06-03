@@ -19,3 +19,5 @@ SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary NOT IN (SEL
 -- 分组查询ID最小的数据，再删除ID不在这个集合中的数据
 DELETE FROM Person WHERE ID NOT IN (SELECT T.MINID FROM (SELECT MIN(ID) AS MINID FROM Person GROUP BY EMAIL) T);
 
+-- LeetCode 197. 上升的温度 查找与之前（昨天的）日期相比温度更高的所有日期的 Id。
+SELECT a.Id FROM Weather a, Weather b WHERE DATEDIFF(a.RecordDate, b.RecordDate) = 1 AND a.Temperature > b.Temperature
