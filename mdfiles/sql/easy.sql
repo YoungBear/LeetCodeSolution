@@ -15,3 +15,7 @@ SELECT FirstName, LastName, City, State FROM Person LEFT JOIN Address ON Person.
 -- LeetCode 176. 第二高的薪水
 SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary NOT IN (SELECT MAX(Salary) FROM Employee)
 
+-- LeetCode 196. 删除重复的电子邮箱
+-- 分组查询ID最小的数据，再删除ID不在这个集合中的数据
+DELETE FROM Person WHERE ID NOT IN (SELECT T.MINID FROM (SELECT MIN(ID) AS MINID FROM Person GROUP BY EMAIL) T);
+
