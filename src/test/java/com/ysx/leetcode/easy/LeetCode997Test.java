@@ -56,13 +56,4 @@ public class LeetCode997Test {
         int excepted = 3;
         Assert.assertEquals(excepted, leetCode997.findJudge(N, trust));
     }
-
-    @Test
-    public void test6() {
-        LeetCode997 leetCode997 = new LeetCode997();
-        int N = 4;
-        int[][] trust = {{3, 2}, {4, 1}, {3, 1}, {2, 1}, {2, 7}, {4, 3}, {4, 2}, {3, 4}};
-        int excepted = 1;
-        Assert.assertEquals(excepted, leetCode997.findJudge(N, trust));
-    }
 }
