@@ -15,6 +15,18 @@ public class LeetCode5479 {
     public String thousandSeparator(int n) {
         String s = String.valueOf(n);
         StringBuilder sb = new StringBuilder();
+        for (int i = s.length() - 1, j = 1; i >= 0; i--, j++) {
+            sb.append(s.charAt(i));
+            if (i != 0 && j % 3 == 0) {
+                sb.append(SEPARATOR);
+            }
+        }
+        return sb.reverse().toString();
+    }
+
+    public String thousandSeparator2(int n) {
+        String s = String.valueOf(n);
+        StringBuilder sb = new StringBuilder();
         if (s.length() <= 3) {
             return s;
         }
