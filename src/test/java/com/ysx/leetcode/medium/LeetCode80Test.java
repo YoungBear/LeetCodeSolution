@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) ysx. 2020-2020. All rights reserved.
+ */
+
 package com.ysx.leetcode.medium;
 
 import com.ysx.leetcode.medium.LeetCode80;
