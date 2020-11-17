@@ -42,6 +42,24 @@ public class LeetCode70 {
     }
 
     /**
+     * 可以看做斐波那契数列
+     *
+     * @param n
+     * @return
+     */
+    public int climbStairs2(int n) {
+        int pre = 0;
+        int cur = 0;
+        int next = 1;
+        for (int i = 1; i <= n; i++) {
+            pre = cur;
+            cur = next;
+            next = pre + cur;
+        }
+        return next;
+    }
+
+    /**
      * 动态规划
      * 数组 dp[n+1]，dp[i]表示i阶楼梯的方法数0<=i&&i<=n
      * dp[0] = 0,dp[1] = 1,dp[2] = 2
