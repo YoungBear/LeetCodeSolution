@@ -4,7 +4,7 @@
 
 package com.ysx.leetcode.medium;
 
-import java.util.TreeSet;
+import java.util.Arrays;
 
 /**
  * @author youngbear
@@ -14,23 +14,31 @@ import java.util.TreeSet;
  * @github https://github.com/YoungBear
  * @description 面试题 17.14. 最小K个数
  * https://leetcode-cn.com/problems/smallest-k-lcci/
+ * 排序
  */
 public class Interview1714 {
+    /**
+     * 冒泡排序
+     * 时间复杂度为O(n*k)
+     * 超时
+     *
+     * @param arr
+     * @param k
+     * @return
+     */
     public int[] smallestK(int[] arr, int k) {
         if (k == 0 || arr == null || arr.length == 0) {
             return new int[0];
         }
-        TreeSet<Integer> treeSet = new TreeSet<>();
-        for (int i = 0; i < arr.length; i++) {
-            treeSet.add(arr[i]);
-            if (treeSet.size() > k) {
-                treeSet.pollLast();
+        for (int i = 0; i < k; i++) {
+            for (int j = arr.length - 1; j > 0; j--) {
+                if (arr[j] < arr[j - 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
+                }
             }
         }
-        int[] result = new int[k];
-        for (int i = 0; i < k; i++) {
-            result[i] = treeSet.pollFirst();
-        }
-        return result;
+        return Arrays.copyOfRange(arr, 0, k);
     }
 }
