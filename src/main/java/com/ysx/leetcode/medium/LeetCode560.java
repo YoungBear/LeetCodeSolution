@@ -4,6 +4,9 @@
 
 package com.ysx.leetcode.medium;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author youngbear
  * @email youngbear@aliyun.com
@@ -15,6 +18,30 @@ package com.ysx.leetcode.medium;
  * https://leetcode-cn.com/problems/subarray-sum-equals-k/
  */
 public class LeetCode560 {
+
+    /**
+     * map表示前缀和为key出现的次数
+     * 初始map.put(0,1)即出现0的次数为1
+     * pre表示当前的前缀和
+     *
+     * @param nums
+     * @param k
+     * @return
+     */
+    public int subarraySum3(int[] nums, int k) {
+        int count = 0, pre = 0;
+        Map<Integer, Integer> mp = new HashMap<>();
+        mp.put(0, 1);
+        for (int i = 0; i < nums.length; i++) {
+            pre += nums[i];
+            if (mp.containsKey(pre - k)) {
+                count += mp.get(pre - k);
+            }
+            mp.put(pre, mp.getOrDefault(pre, 0) + 1);
+        }
+        return count;
+    }
+
 
     /**
      * 前缀和

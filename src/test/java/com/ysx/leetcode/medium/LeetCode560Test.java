@@ -24,4 +24,13 @@ public class LeetCode560Test {
         int excepted = 2;
         Assert.assertEquals(excepted, leetCode560.subarraySum(nums, k));
     }
+
+    @Test
+    public void test2() {
+        LeetCode560 leetCode560 = new LeetCode560();
+        int[] nums = {3, 4, 7, 2, -3, 1, 4, 2};
+        int k = 7;
+        int excepted = 4;
+        Assert.assertEquals(excepted, leetCode560.subarraySum3(nums, k));
+    }
 }
